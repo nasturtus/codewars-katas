@@ -8,19 +8,17 @@ var group = {
 
 function splitTheBill(group) {
   let totalBill = 0;
-  let peopleCount = 0
+  let peopleCount = 0;
   for (key in group) {
     totalBill += group[key];
-    peopleCount++
+    peopleCount++;
   }
-  console.log(totalBill)
-  
-  let splits = {}
+
+  let splits = {};
   for (key in group) {
-      console.log(group[key])
-      splits[key] = parseFloat((group[key] - totalBill/peopleCount).toFixed(2))
+    splits[key] = parseFloat((group[key] - totalBill / peopleCount).toFixed(2));
   }
-  console.log(splits)
+  return splits;
 }
 
 splitTheBill(group);
