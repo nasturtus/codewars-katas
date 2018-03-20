@@ -18,7 +18,8 @@ function splitTheBill(group) {
   for (key in group) {
     splits[key] = parseFloat((group[key] - totalBill / peopleCount).toFixed(2));
   }
-  return splits;
+
+  let average = Object.values(group).reduce((acc, pre) => acc + pre);
 }
 
 splitTheBill(group);
